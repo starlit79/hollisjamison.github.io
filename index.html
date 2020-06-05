@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Add title to the page. -->
+    <title>
+        World's Best JS Calculator
+    </title>
+
+    <!-- Call on Bootstrap's CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Javascript to make calculator work-->
+    <script>
+        // Create calculator Function to call later
+        var calculator = {
+            // addNumber function to add the two numbers 
+            addNumbers: function () {
+                // pull our two numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Do our calculation..
+                document.forms.inputs.result.value = parseInt(numberOne) + parseInt(numberTwo);
+            },
+
+            // subtractNumber function to subtract the two numbers
+            subtractNumbers: function () {
+                // pull our two numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Do our calculation..
+                document.forms.inputs.result.value = parseInt(numberOne) - parseInt(numberTwo);
+            },
+
+            // multiplyNumber function to multiply the two numbers
+            multiplyNumbers: function () {
+                // pull our two numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Do our calculation..
+                document.forms.inputs.result.value = parseInt(numberOne) * parseInt(numberTwo);
+            },
+
+            // divideNumber function to divide the two numbers
+            divideNumbers: function () {
+                // pull our two numebrs
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Do our calculation..
+                document.forms.inputs.result.value = parseInt(numberOne) / parseInt(numberTwo);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <!-- Visible header at top of page -->
+    <h1 class="container-sm p3 my-3 bg-primary text-white">
+        Hollis Jamison's JS Calculator
+    </h1>
+
+    <!-- Add a line break for presentation sake-->
+    <br></br>
+
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">Primary card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+
+    <!-- Allow two numbers to be entered
+    show buttons for add and subtract
+            then show the results  -->
+    <form name="inputs">
+        <!-- Accept the first number... -->
+        <h3>
+            Number One:
+            <input type="number" class="form-control" name="numberOne" aria-label="Number One"
+                aria-describedby="basic-addon1">
+        </h3>
+
+        <!-- Add a line break for presentation sake-->
+        <br></br>
+
+        <!-- Accept the second number.. -->
+        <h3>
+            Number Two:
+            <input type="number" class="form-control" name="numberTwo" aria-label="Number Two"
+                aria-describedby="basic-addon1">
+        </h3>
+
+        <!-- Create the function buttons -->
+        <button type="button" onclick="calculator.addNumbers()" class="btn btn-primary">Add (+)</button>
+        <button type="button" onclick="calculator.subtractNumbers()" class="btn btn-primary">Subtract (-)</button>
+        <button type="button" onclick="calculator.multiplyNumbers()" class="btn btn-primary">Multiply (x)</button>
+        <button type="button" onclick="calculator.divideNumbers()" class="btn btn-primary">Divide (÷)</button>
+        <button type="button" onclick="window.location.reload()" class="btn btn-danger">Clear Calculator</button>
+
+        <!-- Add a line break for presentation sake-->
+        <br></br>
+
+        <!-- Display the result! -->
+        <h3>
+            Result:
+            <input value="0" type="number" name="result" disabled>
+        </h3>
+    </form>
+    <!-- Add a line break for presentation sake-->
+    <br></br>
+
+    <!-- Footer -->
+    <footer>
+        Footer of Hollis Jamison's JS Calculator
+    </footer>
+</body>
+
+</html>
