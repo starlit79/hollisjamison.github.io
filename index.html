@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 
 <head>
     <!-- Add title to the page. -->
@@ -59,66 +59,73 @@
 </head>
 
 <body>
-    <!-- Visible header at top of page -->
-    <h1 class="container-sm p3 my-3 bg-primary text-white">
-        Hollis Jamison's JS Calculator
-    </h1>
 
-    <!-- Add a line break for presentation sake-->
-    <br></br>
-
-    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <!-- Visible header at top of page using Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Hollis's JS Calculator</a>
         </div>
-    </div>
+    </nav>
+    <br></br>
 
     <!-- Allow two numbers to be entered
-    show buttons for add and subtract
-            then show the results  -->
+show buttons for add and subtract
+        then show the results  -->
+    <!-- Create a form to reference in JS -->
     <form name="inputs">
-        <!-- Accept the first number... -->
-        <h3>
-            Number One:
-            <input type="number" class="form-control" name="numberOne" aria-label="Number One"
-                aria-describedby="basic-addon1">
-        </h3>
+        <!-- Create our card to hold our calculator controls and center it -->
+        <div class="card bg-light mb-3" style="max-width: 90%;margin:0 auto;">
+            <h4 class="card-header">Main Calculator</h4>
+            <!-- Input box one-->
+            <div class="input-group mb-3" style="max-width: 95%;margin:0 auto;padding-top: 15px;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Number One:</span>
+                </div>
+                <input type="number" pattern="[0-9]*" class="form-control" placeholder="" aria-label="Number One"
+                    aria-describedby="basic-addon1" name="numberOne"></input>
+            </div>
 
-        <!-- Add a line break for presentation sake-->
-        <br></br>
+            <!-- Input box two-->
+            <div class="input-group mb-3" style="max-width: 95%;margin:0 auto;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Number Two:</span>
+                </div>
+                <input type="number" pattern="[0-9]*" class="form-control" placeholder="" aria-label="Number Two"
+                    aria-describedby="basic-addon1" name="numberTwo"></input>
+            </div>
 
-        <!-- Accept the second number.. -->
-        <h3>
-            Number Two:
-            <input type="number" pattern="[0-9]*" class="form-control" name="numberTwo" aria-label="Number Two"
-                aria-describedby="basic-addon1">
-        </h3>
 
-        <!-- Create the function buttons -->
-        <button type="button" onclick="calculator.addNumbers()" class="btn btn-primary">Add (+)</button>
-        <button type="button" onclick="calculator.subtractNumbers()" class="btn btn-primary">Subtract (-)</button>
-        <button type="button" onclick="calculator.multiplyNumbers()" class="btn btn-primary">Multiply (x)</button>
-        <button type="button" onclick="calculator.divideNumbers()" class="btn btn-primary">Divide (÷)</button>
-        <button type="button" onclick="window.location.reload()" class="btn btn-danger">Clear Calculator</button>
-
-        <!-- Add a line break for presentation sake-->
-        <br></br>
-
-        <!-- Display the result! -->
-        <h3>
-            Result:
-            <input value="0" type="number" name="result" disabled>
-        </h3>
+            <!-- Create the function buttons -->
+            <div class="btn-group" role="Group" style="padding-bottom: 15px;margin:0 auto;">
+                <button type="button" onclick="calculator.addNumbers()" class="btn btn-primary">Add (+)</button>
+                <button type="button" onclick="calculator.subtractNumbers()" class="btn btn-primary">Subtract
+                    (-)</button>
+                <button type="button" onclick="calculator.multiplyNumbers()" class="btn btn-primary">Multiply
+                    (x)</button>
+                <button type="button" onclick="calculator.divideNumbers()" class="btn btn-primary">Divide (÷)</button>
+                <button type="button" onclick="window.location.reload()" class="btn btn-danger">Clear
+                    Calculator</button>
+            </div>
+            <!-- Display the result! -->
+            <div class="card-footer">
+                <div class="input-group mb-3" style="max-width: 98%;margin:0 auto;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Result:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="0" aria-label="Result"
+                        aria-describedby="basic-addon1" name="result" disabled></input>
+                </div>
+            </div>
+        </div>
     </form>
-    <!-- Add a line break for presentation sake-->
-    <br></br>
-
     <!-- Footer -->
-    <footer>
-        Footer of Hollis Jamison's JS Calculator
+    <footer class="footer fixed-bottom" style="background-color: #36393D; padding:15px;">
+        <div class="container text-center">
+            <span class="text-muted">Hollis Jamison / June 2020</span>
+            <div class="text-muted">Made for Stack Education</div>
+            <div class="text-muted">Web Development Summer 2020 Cohort</div>
+        </div>
     </footer>
 </body>
+
 
 </html>
