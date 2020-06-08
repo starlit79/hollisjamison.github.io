@@ -53,6 +53,17 @@
 
                 // Do our calculation..
                 document.forms.inputs.result.value = parseInt(numberOne) / parseInt(numberTwo);
+            },
+
+            //Make a script to flip the numbers
+            flipNumbers: function () {
+                // Pull the current numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Apply them on opposite fields
+                document.forms.inputs.numberOne.value = numberTwo;
+                document.forms.inputs.numberTwo.value = numberOne;
             }
         };
     </script>
@@ -102,8 +113,10 @@ show buttons for add and subtract
                 <button type="button" onclick="calculator.multiplyNumbers()" class="btn btn-primary">Multiply
                     (x)</button>
                 <button type="button" onclick="calculator.divideNumbers()" class="btn btn-primary">Divide (÷)</button>
+                <button type="button" onclick="calculator.flipNumbers()" class="btn btn-success">Swap Numbers</button>
                 <button type="button" onclick="window.location.reload()" class="btn btn-danger">Clear
                     Calculator</button>
+
             </div>
             <!-- Display the result! -->
             <div class="card-footer">
